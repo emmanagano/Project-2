@@ -7,10 +7,11 @@ import Navbar from "./components/Navbar";
 import News from "./components/News";
 import Schools from "./components/Schools";
 
+import "./css/App.css";
+
 const App = () => {
     return (
         <>
-            <Navbar />
             <Routes>
                 <Route
                     path="/"
