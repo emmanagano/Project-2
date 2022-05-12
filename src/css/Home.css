@@ -78,5 +78,23 @@
 }
 .news-updates {
   background-color: #4a6e32;
-  color: white;
+  /* color: white; */
+}
+.blogs-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.blog {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  height: 12rem;
+  padding: 1rem;
+  position: relative;
+}
+.blog img {
+  width: 100vw;
+  height: 100vh;
 }

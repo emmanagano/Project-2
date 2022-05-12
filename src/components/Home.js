@@ -1,6 +1,7 @@
 import "../css/Home.css"
 import {AiOutlineArrowRight} from "react-icons/ai";
 import Navbar from "./Navbar";
+import { blogs } from "./data";
 const  Home = () => {
     return (
         <div className="home_main">
@@ -36,6 +37,14 @@ const  Home = () => {
             </div>
             <div className="news-updates">
                 <h1>News & Updates</h1>
+                <div className="blogs-container">
+                    {blogs.map(blog => {
+                        return <div className="blog">
+                            <h3>{blog.title}</h3>
+                            <p>{blog.date}</p>
+                        </div>
+                    })}
+                </div>
             </div>
         </div>
     )
