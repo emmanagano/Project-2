@@ -1,8 +1,13 @@
 import "../css/Home.css"
 import {AiOutlineArrowRight} from "react-icons/ai";
 import Navbar from "./Navbar";
-import { blogs } from "./data";
-const  Home = () => {
+
+const  Home = ({blogs}) => {
+    const limitedBlogs = blogs.filter((blog) => {
+        if(blog.id < 7) {
+            return true;
+        }
+    })
     return (
         <div className="home_main">
             <Navbar />
@@ -29,21 +34,28 @@ const  Home = () => {
                     <h3>UNIC UC46 Board Projectors</h3>
                     <h3>Solar Lights for Student Use</h3>
                 </div>
-                <div class="custom-shape-divider-bottom-1652303261">
+                <div className="custom-shape-divider-bottom-1652303261">
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                        <path d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z" class="shape-fill"></path>
+                        <path d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z" className="shape-fill"></path>
                     </svg>
                 </div>
             </div>
             <div className="news-updates">
                 <h1>News & Updates</h1>
                 <div className="blogs-container">
-                    {blogs.map(blog => {
-                        return <div className="blog">
-                            <h3>{blog.title}</h3>
-                            <p>{blog.date}</p>
+                    {limitedBlogs.map(blog => {
+                        return <div key={blog.id} className="blog">
+                            <span>
+                                <p>{blog.date}</p>
+                                <h3>{blog.title}</h3>
+                            </span>
                         </div>
                     })}
+                </div>
+                <div className="see-more-button">
+                    <button>
+                        See more
+                    </button>
                 </div>
             </div>
         </div>
